@@ -38,10 +38,6 @@ body::before {
     color: #1dbf73;
 }
 
-:target:before {
-  content:"";
-  display:block;
-  height:900px; /* fixed header height*/
-  margin:-900px 0 0; /* negative fixed header height */
-  }
+/* Adding scroll offset equal to navbar margin */
+:target { scroll-margin-top: 140px; } 
   
