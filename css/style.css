@@ -1,0 +1,47 @@
+body::before {
+  display: block;
+  content: '';
+  height: 60px;
+}
+
+#map {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+
+@media (min-width: 768px) {
+  .news-input {
+    width: 40%;
+  }
+}
+
+.w-logo {
+  width: 50%;
+}
+
+.navbar a {
+  display: inline-block;
+  padding: 10px;
+  color: #ffffff;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  text-transform: uppercase;
+  outline: none;
+  text-decoration: none;
+}
+
+
+.navbar li:hover > a,
+.navbar > .menu-active > a {
+    color: #1dbf73;
+}
+
+:target:before {
+  content:"";
+  display:block;
+  height:900px; /* fixed header height*/
+  margin:-900px 0 0; /* negative fixed header height */
+  }
+  
