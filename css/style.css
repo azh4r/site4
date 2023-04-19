@@ -16,9 +16,9 @@ body::before {
   }
 }
 
-.w-logo {
-  width: 50%;
-}
+/* .w-logo {
+  width: 60%;
+} */
 
 .navbar-dark .navbar-nav .nav-link {
   display: inline-block;
