@@ -1,9 +1,6 @@
-name: Deploy to S3_
+name: Deploy to S3
 
-on:
-  push:
-    branches:
-      - main
+on: [push]
 
 jobs:
   deploy:
@@ -11,18 +8,14 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - name: Install AWS CLI
-        run: |
-          curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
-          unzip awscliv2.zip
-          sudo ./aws/install
+
       - name: Configure AWS credentials
-        run: |
-          echo "[default]
-            aws_access_key_id = ${{ secrets.AWS_ACCESS_KEY_ID }}
-            aws_secret_access_key = ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-            region: us-east-1
-          " > ~/.aws/credentials        
+        uses: aws/aws-sdk-actions@v1
+        with:
+          access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          region: us-east-1
+
       - name: Deploy to S3
         run: |
           aws s3 cp --recursive . s3://${{ secrets.AWS_S3_BUCKET }}
