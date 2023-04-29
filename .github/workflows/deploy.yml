@@ -14,12 +14,12 @@ jobs:
           unzip awscliv2.zip
           sudo ./aws/install
       - name: Configure AWS credentials
-        uses: aws/aws-sdk-actions@v1
-        with:
-          access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          region: us-east-1
-
+        run: |
+          echo "[default]
+            aws_access_key_id = ${{ secrets.AWS_ACCESS_KEY_ID }}
+            aws_secret_access_key = ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+            region: us-east-1
+          " > ~/.aws/credentials        
       - name: Deploy to S3
         run: |
           aws s3 cp --recursive . s3://${{ secrets.AWS_S3_BUCKET }}
