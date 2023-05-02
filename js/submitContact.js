@@ -1,4 +1,4 @@
-function submitToAPI(e) {
+function submitContactToAPI(e) {
 
    
     e.preventDefault();

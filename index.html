@@ -97,8 +97,8 @@
           <h3 class="mb-3 mb-md-0">Sign Up For Our Newsletter</h3>
 
           <div class="input-group news-input">
-            <input type="text" class="form-control" placeholder="Enter Email" />
-            <button class="btn btn-dark btn-lg" type="button">Submit</button>
+            <input type="text" class="form-control" id="newsletter-text" placeholder="Enter Email" />
+            <button class="btn btn-dark btn-lg" onClick="submitNewsletterToAPI(event)" type="button">Submit</button>
           </div>
         </div>
       </div>
@@ -536,7 +536,7 @@
             >
               Close
             </button>
-            <button type="button" onClick="submitToAPI(event)" class="btn btn-primary">Submit</button>
+            <button type="button" onClick="submitContactToAPI(event)" class="btn btn-primary">Submit</button>
           </div>
         </div>
       </div>
@@ -563,5 +563,6 @@
     <!-- Main Javascript File -->
     <script src="js/main.js"></script>
     <script src="js/submitContact.js"></script>
+    <script src="js/submitNewsletter.js"></script>
   </body>
 </html>
