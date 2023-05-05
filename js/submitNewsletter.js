@@ -1,8 +1,7 @@
 function submitNewsletterToAPI(e) {
 
-    e.preventDefault();
-    var URL = "https://nq0uxh113h.execute-api.us-east-1.amazonaws.com/01/newsletter-sub";
 
+    e.preventDefault();
 
          if ($("#newsletter-text").val()=="") {
              alert ("Please enter your email id");
@@ -22,7 +21,7 @@ function submitNewsletterToAPI(e) {
 
     $.ajax({
       type: "POST",
-      url : "https://nq0uxh113h.execute-api.us-east-1.amazonaws.com/01/newsletter-sub",
+      url : "https://s2q68t5ax5.execute-api.us-east-1.amazonaws.com/dev/sendNewsletterEmail",
       dataType: "json",
       crossDomain: "true",
       contentType: "application/json; charset=utf-8",
@@ -38,4 +37,5 @@ function submitNewsletterToAPI(e) {
         // show an error message
         alert("UnSuccessfull");
       }});
+
   }

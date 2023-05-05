@@ -2,7 +2,6 @@ function submitContactToAPI(e) {
 
    
     e.preventDefault();
-    var URL = "https://nq0uxh113h.execute-api.us-east-1.amazonaws.com/01/contact-us";
 
          var Namere = /[A-Za-z]{1}[A-Za-z]/;
          if (!Namere.test($("#first-name").val())) {
@@ -42,7 +41,7 @@ function submitContactToAPI(e) {
 
     $.ajax({
       type: "POST",
-      url : "https://nq0uxh113h.execute-api.us-east-1.amazonaws.com/01/contact-us",
+      url : "https://s2q68t5ax5.execute-api.us-east-1.amazonaws.com/dev/sendContactEmail",
       dataType: "json",
       crossDomain: "true",
       contentType: "application/json; charset=utf-8",
